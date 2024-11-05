@@ -3,7 +3,7 @@ file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS
     ${CMAKE_CURRENT_SOURCE_DIR}/*.cc
 )
 
-add_library(shape STATIC ${SRC_FILES})
+add_library(shape SHARED ${SRC_FILES})
 
 # shape 의 include 경로 지정
 target_include_directories(shape PUBLIC ${CMAKE_SOURCE_DIR}/include)
