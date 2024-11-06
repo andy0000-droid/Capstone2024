@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.11)
 project(
     "Capstone 2024"
     VERSION 0.1
-    DESCRIPTION "예제 프로젝트"
+    DESCRIPTION "캡스톤 디자인"
     LANGUAGES CXX)
 
 # 라이브러리 파일은 빌드 디렉토리 안에 lib 폴더에 출력.
