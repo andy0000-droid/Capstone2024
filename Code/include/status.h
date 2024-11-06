@@ -6,14 +6,14 @@
 #include <iostream>
 #include <memory>
 
-// »óÅÂ ÀÎÅÍÆäÀÌ½º
+// ìƒíƒœ ì¸í„°í˜ì´ìŠ¤
 class State {
 public:
     virtual ~State() {}
-    virtual void handle() = 0;  // »óÅÂ°¡ Ã³¸®ÇÒ ÀÛ¾÷ Á¤ÀÇ
+    virtual void handle() = 0;  // ê° ìƒíƒœì—ì„œ ì²˜ë¦¬í•  ì‘ì—… ì •ì˜
 };
 
-// ¾ÏÈ£ ¸ğµâ Å¬·¡½º ¼±¾ğ (ÀüÀÌ ¸Ş¼­µå¸¦ °¡Áú ¼ö ÀÖÀ½)
+// ì•”í˜¸ ëª¨ë“ˆ í´ë˜ìŠ¤ ì„ ì–¸ (ì „ì´ ë©”ì†Œë“œë¥¼ ê°€ì§ˆ ìˆ˜ ìˆìŒ)
 class CryptoModule {
 public:
     void setState(std::unique_ptr<State> newState);
@@ -24,7 +24,7 @@ private:
     std::unique_ptr<State> state;
 };
 
-// »óÅÂº° Å¬·¡½º Á¤ÀÇ
+// ìƒíƒœë³„ í´ë˜ìŠ¤ ì •ì˜ -> APIí™” 
 class IdleState : public State {
 public:
     void handle() override;
