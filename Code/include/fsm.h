@@ -51,6 +51,7 @@ public:
         SIMPLE_ERROR = 1,
         SERIOUS_ERROR = 2
     };
+    
 
     //ErrorState(ErrorSeverity severity) : errorSeverity(severity) {}
     ErrorState(ErrorSeverity severity, const std::string& message)
