@@ -12,6 +12,9 @@ void printHex(const Byte* data, int length) {
 }
 
 bool knownAnswerTest() {
+    /*
+    Change to TestVector
+    */
     Byte key[32] = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F };
     Byte plaintext[16] = { 0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF };
     Byte expectedCiphertext[16] = { 0x1d, 0x6f, 0x56, 0x53, 0x19, 0x2c, 0xc0, 0x19, 0x0d, 0xf8, 0x5c, 0xa9, 0xde, 0xa6, 0xcd, 0xc4 };
@@ -38,7 +41,14 @@ bool knownAnswerTest() {
     printHex(ciphertext, 16);
     std::cout << "Expected Ciphertext: ";
     printHex(expectedCiphertext, 16);
-    std::cout << "Known Answer Test Result: " << (result ? "Pass" : "Fail") << std::endl;
+    if (result == true) {
+        std::cout << "Known Answer Test Result: Fail" << std::endl;
+    }
+    else {
+        std::cout << "Known Answer Test Result: Pass" << std::endl;
+        error = true;
+    }
+        
 
     return result;
 }

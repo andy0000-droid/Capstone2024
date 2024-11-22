@@ -6,14 +6,12 @@
 #include <iostream>
 #include <memory>
 
-// 상태 인터페이스
 class State {
 public:
     virtual ~State() {}
-    virtual void handle() = 0;  // 각 상태에서 처리할 작업 정의
+    virtual void handle() = 0; 
 };
 
-// 암호 모듈 클래스 선언 (전이 메소드를 가질 수 있음)
 class CryptoModule {
 public:
     void setState(std::unique_ptr<State> newState);
@@ -24,7 +22,6 @@ private:
     std::unique_ptr<State> state;
 };
 
-// 상태별 클래스 정의 -> API화 
 class IdleState : public State {
 public:
     void handle() override;
@@ -35,12 +32,12 @@ public:
     void handle() override;
 };
 
-class EncryptionState : public State {
+class SelfTestState : public State {
 public:
     void handle() override;
 };
 
-class DecryptionState : public State {
+class TestmodeState : public State {
 public:
     void handle() override;
 };
@@ -51,7 +48,6 @@ public:
         SIMPLE_ERROR = 1,
         SERIOUS_ERROR = 2
     };
-    
 
     //ErrorState(ErrorSeverity severity) : errorSeverity(severity) {}
     ErrorState(ErrorSeverity severity, const std::string& message)
@@ -60,14 +56,12 @@ public:
 
 private:
     ErrorSeverity errorSeverity;
+    std::string errorMessage;
 };
 
 class ShutdownState : public State {
 public:
     void handle() override;
 };
-
-
-
 
 #endif 
