@@ -13,23 +13,35 @@ void CryptoModule::process() {
 
 // 각 상태의 동작 구현
 void IdleState::handle() {
-    std::cout << "현재 상태: Idle ( 상태)" << std::endl;
+    /*
+    모듈의 버전 및 상태 출력
+    */
+    std::cout << "현재 상태: Idle (상태)" << std::endl;
     std::cout << "Version : 0.0.1" << std::endl;
     std::cout << "Name : sdfsdfsd" << std::endl;
     // 추가적인 처리 로직
 }
 
 void InitializationState::handle() {
+    /*
+    모듈의 전역 변수 초기화
+    */
     std::cout << "현재 상태: Initialization (초기화 상태)" << std::endl;
     // 초기화 작업 처리 로직
 }
 
 void SelfTestState::handle() {
+    /*
+    자가 시험 호출
+    */
     std::cout << "자가시험 상태: 무결성 검증을 시작합니다." << std::endl;
     //제로화 기능 추가
 }
 
 void TestmodeState::handle() {
+    /*
+    자가 시험 수행
+    */
     std::cout << "조건부 자가시험을 수행합니다." << std::endl;
     if (knownAnswerTest()) {
         std::cout << "기지 답안 시험 통과: 알고리즘이 예상대로 동작합니다." << std::endl;
@@ -49,6 +61,9 @@ void TestmodeState::handle() {
 }
 
 void ErrorState::handle() {
+    /*
+    에러 처리
+    */
     std::cout << "현재 상태: Error" << std::endl;
     if (errorSeverity == SERIOUS_ERROR) {
         std::cout << "심각한 오류 발생. 시스템 종료 필요." << std::endl;
@@ -63,6 +78,9 @@ void ErrorState::handle() {
 }
 
 void ShutdownState::handle() {
+    /*
+    종료
+    */
     std::cout << "현재 상태: Shutdown (종료 상태)" << std::endl;
     exit(1);
 }
