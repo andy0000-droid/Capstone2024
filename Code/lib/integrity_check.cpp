@@ -1,8 +1,8 @@
 #include <iostream>
 #include <iomanip>
 #include <cstring>
-#include "aria.h"
-#include "data.h"
+// #include "aria.h"
+// #include "data.h"
 
 void printHex(const Byte* data, int length) {
     for (int i = 0; i < length; ++i) {

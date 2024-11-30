@@ -1,4 +1,4 @@
-#include "status.h"
+#include "fsm.h"
 #include "integrity_check.h"
 
 void CryptoModule::setState(std::unique_ptr<State> newState) {
@@ -56,7 +56,7 @@ void TestmodeState::handle() {
     }
     else {
         std::cerr << "암호키 쌍 일치 시험 실패: 암호화와 복호화 키가 일치하지 않습니다!" << std::endl;
-        InitializationState;
+        // InitializationState;
     }
 }
 

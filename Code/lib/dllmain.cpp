@@ -3,7 +3,7 @@
 
 
 namespace cryptodll {
-    bool dllmain(char *filename, char *crypto, char *mode) {
+    void dllmain(char *filename, char *crypto, char *mode) {
         
         // dll entrypoint
     }

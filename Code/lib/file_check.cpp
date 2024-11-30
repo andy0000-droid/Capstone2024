@@ -1,4 +1,4 @@
-#pragma warning(disable:4996)
+// #pragma warning(disable:4996)
 
 #include "file_check.h"
 #include <iostream>
@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <openssl/sha.h>
 
-#define _CRT_SECURE_NO_WARNINGS
+// #define _CRT_SECURE_NO_WARNINGS
 
 std::string CalculateSHA256(const std::string& file_path) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
